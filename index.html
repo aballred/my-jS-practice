@@ -19,8 +19,16 @@
     hoursStudied = hoursStudied + 1; // Incrementing
     console.log("Total hours studied: " + hoursStudied);
     
-    if (hoursStudied >= 2) {
-      console.log("Goal reached! Take a break.");
+    if (hoursStudied >= 3) {
+        console.log("You really need to stop working.");
+    }
+   
+    else if (hoursStudied === 2) {
+        console.log("That's enough, be done.");
+    }
+
+    else {
+        console.log("Keep working bro.");
     }
   }
 </script>
