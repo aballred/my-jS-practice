@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security</title>
+</head>
+<body>
+    <a href="index.html">Go home bro</a>
+    <a href="challenge_1.html">Good Morning Pal</a>
+    <a href="parameters.html">Parameters</a>
+
+    <h1>Security Check</h1>
+
+    <script>
+
+        // 1. Ask the question and catch the answer in a variable
+    let userAge = prompt("How old are you?");
+
+    // 2. Use that variable in your Logic Waterfall
+    function checkSecurity() {
+        if (userAge >= 18) {
+            console.log("Access Granted. Welcome to the club!");
+        } else {
+            console.log("Access Denied. Go home kid.");
+        }
+    }
+
+    </script>
+
+
+</body>
+</html>
