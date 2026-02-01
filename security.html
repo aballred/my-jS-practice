@@ -17,14 +17,19 @@
 <script>
     function runSecurityCheck() {
         // The prompt happens ONLY when the button is clicked
-        let age = prompt("Please enter your age:");
+
+        let age = Number(prompt("Please enter your age."));
 
         // Logic check
-        if (age > 18) {
+        if (isNaN(age)) {
+            console.log("That's not even a number, pal!");
+        }
+        
+        else if (age > 18) {
             console.log("Success! You entered: " + age + ". Access Granted.");
         } 
         
-        else if (age === "18") {
+        else if (age === 18) {
             console.log("Buddy, you barely made it. " + age + " is the minimum age allowed!");
         }
         
