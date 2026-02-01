@@ -12,27 +12,21 @@
 
     <h1>Security Check</h1>
 
-    <script>
+  <button onclick="runSecurityCheck()">Enter the Club</button>
 
-        // 1. Ask the question and catch the answer in a variable
-    let userAge = prompt("How old are you?");
+<script>
+    function runSecurityCheck() {
+        // The prompt happens ONLY when the button is clicked
+        let age = prompt("Please enter your age:");
 
-    // 2. Use that variable in your Logic Waterfall
-    function checkSecurity() {
-        if (userAge >= 18) {
-            console.log("Access Granted. Welcome to the club!");
-        } 
-        
-        else {
-            console.log("Access Denied. Go home kid.");
+        // Logic check
+        if (age >= 18) {
+            console.log("Success! You entered: " + age + ". Access Granted.");
+        } else {
+            console.log("Denied! You entered: " + age + ". Access Denied.");
         }
     }
-
-    
-
-    </script>
-
-    <button onclick="(prompt)">What is your age?</button>
+</script>
 
 </body>
 </html>
