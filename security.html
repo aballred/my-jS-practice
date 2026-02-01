@@ -14,32 +14,37 @@
 
   <button onclick="runSecurityCheck()">Enter the Club</button>
 
+
 <script>
     function runSecurityCheck() {
         // The prompt happens ONLY when the button is clicked
 
         let age = Number(prompt("Please enter your age."));
+        let message = "";
 
         // Logic check
         if (isNaN(age)) {
-            console.log("That's not even a number, pal!");
+            message = "Broski, I said to enter a number.";
         }
         
         else if (age > 18) {
-            console.log("Success! You entered: " + age + ". Access Granted.");
+            message = ("Success! You entered: " + age + " is approaching Unc status.");
         } 
         
         else if (age === 18) {
-            console.log("Buddy, you barely made it. " + age + " is the minimum age allowed!");
+            message = ("Buddy, you barely made it. " + age + " is the minimum age allowed!");
         }
         
         else {
-            console.log("Denied! You entered: " + age + ". Access Denied.");
+            message = ("Go home and drink some milk, you're under 18.");
         }
 
+        document.getElementById("age-message").innerText = message;
         
     }
 </script>
+
+<p><span id="age-message">Waiting for age input.</span></p>
 
 </body>
 </html>
