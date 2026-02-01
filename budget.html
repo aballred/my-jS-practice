@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget</title>
+    <style>
+        #status.display{
+            padding: 0;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .invalid{
+           border: red 5px solid;
+        }
+
+        .insufficient{
+            background-color: red;
+            color: black;
+            font-weight: bold;
+        }
+
+        .funds_available{
+            background-color: green;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <button>Buy Something New</button>
@@ -12,9 +36,36 @@
 
     <script>
         let bankBalance = 500;
-        let itemCost = Number(prompt("Please enter the purchase price."));
+        let message = "";
+        let statusClass = "";
 
-        let ableToBuy = bankBalance - itemCost;
+        function runPurchaseScenario () {
+            let itemCost = Number(prompt("Please enter the purchase price."));
+
+            if (isNaN(itemCost)) {
+                message = "Please enter a valid number.";
+                statusClass = "invalid";
+            }
+
+            else if (itemCost > bankBalance) {
+                message = "Go to work, you have no cash.";
+                statusClass = "insufficient";
+            }
+
+            else if (itemCost === 0) {
+                message = "Free item, put it in your bag.";
+                statusClass = "funds_available";
+            }
+
+            else {
+                message = "Buy it, you've got enough money."
+                statusClass = "funds_available";
+            }
+
+            let display = document.getElementById("status-display");
+            display.innerText = message;
+            display.className = statusClass;
+        }
 
 
     </script>
