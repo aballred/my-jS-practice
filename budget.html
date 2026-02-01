@@ -48,7 +48,7 @@
             }
 
             else if (itemCost > bankBalance) {
-                message = "Go to work, you have no cash.";
+                message = "Go to work, you have no cash. This item costs $" + (itemCost - bankBalance) + "more than what you have available.";
                 statusClass = "insufficient";
             }
 
