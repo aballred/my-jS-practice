@@ -17,33 +17,38 @@
 
   // TASK 2: Create a function that adds to that number
   function studyHarder() {
+
     hoursStudied = hoursStudied + 1; // Incrementing
-    console.log("Total hours studied: " + hoursStudied);
-    
-    if (hoursStudied > 4) {
-        console.log("Now you're just showing off.");
+
+    // Creating the variable within the function to handle the message. 
+    let message = "";
+
+    // Waterfall logic
+    if (hoursStudied > 3) {
+        message = "Now you're just showing off pal!";
     }
 
-    else if (hoursStudied === 4) {
-        console.log("Be done amigo.");
-    }
-
-   
     else if (hoursStudied === 3) {
-            console.log("You're pushing it pal.");
+        message = "Buddy, you better slow down.";
     }
 
     else if (hoursStudied === 2) {
-        console.log("That's enough, be done.");
+        message = "Seems about right.";
     }
 
     else {
-        console.log("Keep working bro.");
+        message = "Keep going buddy boy.";
     }
-  }
+
+
+    // Writing the message to the browser instead of the console.  
+    document.getElementById("study-message").innerText = message;
+
+}
 </script>
 
 <button onclick="studyHarder()">Click after 1 hour of study</button>
+<p>Status: <span id="study-message">Waiting to start...</span></p>
 
 </body>
 
