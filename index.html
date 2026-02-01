@@ -10,6 +10,23 @@
 <body>
     <h1>testing</h1>
 
+    <script>
+  // TASK 1: Create a variable for a number
+  let hoursStudied = 0;
+
+  // TASK 2: Create a function that adds to that number
+  function studyHarder() {
+    hoursStudied = hoursStudied + 1; // Incrementing
+    console.log("Total hours studied: " + hoursStudied);
+    
+    if (hoursStudied >= 2) {
+      console.log("Goal reached! Take a break.");
+    }
+  }
+</script>
+
+<button onclick="studyHarder()">Click after 1 hour of study</button>
+
 </body>
 
 </html>
