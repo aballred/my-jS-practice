@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security</title>
+    <style>
+        #age-message{
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .granted{
+            background-color: green;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .denied{
+            background-color: red;
+            color: black;
+            text-decoration: line-through;
+        }
+
+    </style>
 </head>
 <body>
     <a href="index.html">Go home bro</a>
@@ -21,25 +42,33 @@
 
         let age = Number(prompt("Please enter your age."));
         let message = "";
+        let statusClass = "";
 
         // Logic check
         if (isNaN(age)) {
             message = "Broski, I said to enter a number.";
+            statusClass = "denied";
         }
         
         else if (age > 18) {
             message = ("Success! You entered: " + age + " is approaching Unc status.");
+            statusClass = "granted";
         } 
         
         else if (age === 18) {
             message = ("Buddy, you barely made it. " + age + " is the minimum age allowed!");
+            statusClass = "granted";
         }
         
         else {
             message = ("Go home and drink some milk, you're under 18.");
+            statusClass = "denied";
         }
 
-        document.getElementById("age-message").innerText = message;
+        let display = document.getElementById("age-message");
+        display.innerText = message;
+
+        display.className = statusClass;
         
     }
 </script>
